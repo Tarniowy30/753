@@ -1,6 +1,3 @@
-// Projeto Agrinho 2025 - Conexão Campo-Cidade
-// Versão final com dist(), map(), teclado, mouse e comentários explicativos
-
 let cenario = "menu";
 let imgCampo, imgCidade, imgConexao;
 let somCampo, somCidade, somConexao;
@@ -8,10 +5,9 @@ let fade = 0;
 let corFundo;
 let corAlvo;
 let botaoMenu;
-let circuloX, circuloY; // Variáveis para efeito com dist() e map()
+let circuloX, circuloY;
 
 function preload() {
-  // Carregando imagens e sons
   imgCampo = loadImage('campo.jpg');
   imgCidade = loadImage('cidade.jpg');
   imgConexao = loadImage('conexao.jpg');
@@ -29,19 +25,16 @@ function setup() {
   corFundo = color(220);
   corAlvo = color(220);
 
-  // Criar botão de voltar ao menu
   botaoMenu = createButton('Voltar ao Menu');
   botaoMenu.position(20, 20);
   botaoMenu.mousePressed(() => mudarCenario('menu'));
   botaoMenu.hide();
 
-  // Inicializa posição do efeito de dist()
   circuloX = width / 2;
   circuloY = height / 2;
 }
 
 function draw() {
-  // Transição de cor de fundo
   corFundo = lerpColor(corFundo, corAlvo, 0.05);
   background(corFundo);
 
@@ -61,12 +54,9 @@ function draw() {
       image(imgConexao, 0, 0, width, height);
       mostrarTextoConexao();
     }
-
-    // Efeito usando dist() e map(): círculo que reage ao mouse
     desenharEfeitoDist();
   }
 
-  // Efeito de fade-in no texto
   fade = constrain(fade + 2, 0, 255);
   fill(0, fade);
 }
@@ -77,7 +67,7 @@ function mostrarMenu() {
   text("🌱 Conexão Campo-Cidade 🌆", width / 2, height / 3);
 
   textSize(18);
-  text("Explore como o Campo e a Cidade estão interligados.\nUse os botões ou o teclado:\n1 - Campo | 2 - Cidade | 3 - Conexão | m - Menu", width / 2, height / 2.2);
+  text("Explore como o Campo e a Cidade estão interligados.\nUse o teclado:\n1 - Campo | 2 - Cidade | 3 - Conexão | m - Menu", width / 2, height / 2.2);
 }
 
 function mostrarTextoCampo() {
@@ -95,7 +85,6 @@ function mostrarTextoConexao() {
   text("Campo e Cidade: juntos alimentam e desenvolvem a sociedade.\nCada ação no campo reflete na cidade e vice-versa.", width / 2, 510);
 }
 
-// Caixa de fundo para o texto de cada cenário
 function desenharCaixaTexto() {
   fill(255, 230);
   stroke(180);
@@ -105,7 +94,6 @@ function desenharCaixaTexto() {
   textSize(16);
 }
 
-// Efeito visual que usa dist() e map(): um círculo que muda de tamanho conforme a distância do mouse ao centro
 function desenharEfeitoDist() {
   let distancia = dist(mouseX, mouseY, circuloX, circuloY);
   let tamanho = map(distancia, 0, width, 50, 10);
@@ -114,14 +102,13 @@ function desenharEfeitoDist() {
   ellipse(mouseX, mouseY, tamanho, tamanho);
 }
 
-// Troca de cenário ao clicar com o mouse
 function mousePressed() {
-  if (cenario === "menu") {
+  // Só mudar de cenário se clicar fora do botão
+  if (cenario === "menu" && mouseY > 50) {
     mudarCenario("campo");
   }
 }
 
-// Troca de cenário usando teclas
 function keyPressed() {
   if (key === '1') {
     mudarCenario("campo");
@@ -134,11 +121,15 @@ function keyPressed() {
   }
 }
 
-// Função para mudar o cenário com efeitos sonoros e transição de cor
 function mudarCenario(novo) {
   fade = 0;
   corFundo = color(220);
   corAlvo = color(random(255), random(255), random(255));
+
+  // Parar todos os sons antes de iniciar o novo
+  somCampo.stop();
+  somCidade.stop();
+  somConexao.stop();
 
   if (novo === "campo") {
     somCampo.play();
