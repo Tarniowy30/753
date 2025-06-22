@@ -1,3 +1,4 @@
+
 let cenario = "menu";
 let imgCampo, imgCidade, imgConexao;
 let somCampo, somCidade, somConexao;
@@ -25,7 +26,6 @@ function setup() {
 }
 
 function draw() {
-  // Transição suave de fundo
   corFundo = lerpColor(corFundo, corAlvo, 0.05);
   background(corFundo);
 
@@ -51,7 +51,7 @@ function mostrarMenu() {
   textSize(22);
   text("🌱 Conexão Campo-Cidade 🌆", width / 2, height / 4);
   textSize(16);
-  text("Explore como o Campo e a Cidade estão interligados. Clique ou use o teclado: 1-Campo | 2-Cidade | 3-Conexão", width / 2, height / 2);
+  text("Explore como o Campo e a Cidade estão interligados. Clique ou use o teclado: 1-Campo | 2-Cidade | 3-Conexão | m-Menu", width / 2, height / 2);
 }
 
 function mostrarTextoCampo() {
@@ -107,8 +107,3 @@ function mudarCenario(novo) {
   }
   cenario = novo;
 }
-
-
-  
-  
-  
