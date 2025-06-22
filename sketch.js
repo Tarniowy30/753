@@ -1,4 +1,3 @@
-
 let cenario = "menu";
 let imgCampo, imgCidade, imgConexao;
 let somCampo, somCidade, somConexao;
@@ -48,31 +47,35 @@ function draw() {
 
 function mostrarMenu() {
   fill(0);
-  textSize(22);
-  text("🌱 Conexão Campo-Cidade 🌆", width / 2, height / 4);
+  textSize(24);
+  text("🌱 Conexão Campo-Cidade 🌆", width / 2, height / 3);
+
   textSize(16);
-  text("Explore como o Campo e a Cidade estão interligados. Clique ou use o teclado: 1-Campo | 2-Cidade | 3-Conexão | m-Menu", width / 2, height / 2);
+  text("Explore como o Campo e a Cidade estão interligados.\nClique ou use o teclado:\n1 - Campo | 2 - Cidade | 3 - Conexão | m - Menu", width / 2, height / 2.2);
 }
 
 function mostrarTextoCampo() {
-  fill(255);
+  fill(255, 240);
   rect(50, 450, 700, 120, 20);
   fill(0);
-  text("O campo é responsável por produzir os alimentos que abastecem a cidade. Tecnologia e trabalho sustentam esse ciclo.", width / 2, 510, 600, 100);
+  textSize(16);
+  text("O campo é responsável por produzir os alimentos que abastecem a cidade.\nTecnologia e trabalho sustentam esse ciclo.", width / 2, 510);
 }
 
 function mostrarTextoCidade() {
-  fill(255);
+  fill(255, 240);
   rect(50, 450, 700, 120, 20);
   fill(0);
-  text("A cidade consome, distribui e também fornece tecnologia para o campo. Uma relação de mão dupla e colaboração.", width / 2, 510, 600, 100);
+  textSize(16);
+  text("A cidade consome, distribui e também fornece tecnologia para o campo.\nUma relação de mão dupla e colaboração.", width / 2, 510);
 }
 
 function mostrarTextoConexao() {
-  fill(255);
+  fill(255, 240);
   rect(50, 450, 700, 120, 20);
   fill(0);
-  text("Campo e Cidade: juntos, alimentam e desenvolvem a sociedade. Cada ação no campo reflete na cidade e vice-versa.", width / 2, 510, 600, 100);
+  textSize(16);
+  text("Campo e Cidade: juntos alimentam e desenvolvem a sociedade.\nCada ação no campo reflete na cidade e vice-versa.", width / 2, 510);
 }
 
 function mousePressed() {
@@ -107,3 +110,9 @@ function mudarCenario(novo) {
   }
   cenario = novo;
 }
+
+
+
+
+  
+  
