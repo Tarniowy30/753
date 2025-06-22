@@ -54,6 +54,7 @@ function draw() {
       image(imgConexao, 0, 0, width, height);
       mostrarTextoConexao();
     }
+
     desenharEfeitoDist();
   }
 
@@ -102,14 +103,22 @@ function desenharEfeitoDist() {
   ellipse(mouseX, mouseY, tamanho, tamanho);
 }
 
+// Função central para parar todos os áudios
+function pararTodosOsSons() {
+  if (somCampo.isPlaying()) somCampo.stop();
+  if (somCidade.isPlaying()) somCidade.stop();
+  if (somConexao.isPlaying()) somConexao.stop();
+}
+
 function mousePressed() {
-  // Só mudar de cenário se clicar fora do botão
+  // Só mudar de cenário se for fora do botão
   if (cenario === "menu" && mouseY > 50) {
     mudarCenario("campo");
   }
 }
 
 function keyPressed() {
+  pararTodosOsSons(); // Garante que qualquer som pare ao usar teclado
   if (key === '1') {
     mudarCenario("campo");
   } else if (key === '2') {
@@ -126,10 +135,7 @@ function mudarCenario(novo) {
   corFundo = color(220);
   corAlvo = color(random(255), random(255), random(255));
 
-  // Parar todos os sons antes de iniciar o novo
-  somCampo.stop();
-  somCidade.stop();
-  somConexao.stop();
+  pararTodosOsSons(); // Sempre para todos os sons antes de tocar o novo
 
   if (novo === "campo") {
     somCampo.play();
