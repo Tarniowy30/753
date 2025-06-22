@@ -1,35 +1,58 @@
 
-# Projeto Agrinho 2025 - Conexão Campo-Cidade 🌱🏙️
+# Projeto Agrinho 2025 🌱🌆
+**Tema:** "Festejando a Conexão Campo-Cidade"
+**Hashtag:** #agrinho
 
-## Tema
-**"Festejando a Conexão Campo-Cidade"**
+## 🎯 Objetivo
+Este projeto tem como objetivo mostrar de forma interativa e educativa como o campo e a cidade são interdependentes, destacando a importância de cada um para a sociedade.
 
-## Objetivo
-Este projeto interativo em p5.js tem como objetivo demonstrar, de forma educativa e lúdica, a interdependência entre o Campo e a Cidade. Utiliza imagens, sons e efeitos visuais para representar a importância da agricultura para a vida urbana e vice-versa.
+Por meio de imagens, sons e interações visuais e sonoras, o usuário pode explorar os diferentes cenários e entender melhor como o Campo e a Cidade se conectam.
 
-## Recursos utilizados
-- Linguagem: JavaScript (p5.js)
-- Sons e imagens originais do projeto
-- Interações com **mouse** e **teclado**
-- Transições suaves de cores usando **lerpColor()**
-- Uso de funções como **map()**, **dist()**, **for loops**, **mousePressed()** e **keyPressed()**
+## 🖥️ Tecnologias Utilizadas
+- Linguagem: JavaScript
+- Biblioteca: p5.js + p5.sound
+- Ambiente: GitHub Pages (publicado no repositório com a hashtag #agrinho)
 
-## Funcionalidades
-- Tela inicial com resumo do projeto
-- Botões para explorar o Campo, a Cidade e a Conexão entre eles
-- Sons temáticos para cada ambiente
-- Texto dinâmico com base na interação
-- Uso de variáveis e cálculos matemáticos para efeitos dinâmicos
-- Interface responsiva e com instruções claras
+## 🕹️ Funcionalidades Interativas
+- Navegação por **mouse** e **teclado**
+- Sons temáticos exclusivos para cada cenário
+- Transições suaves de cor com **lerpColor()**
+- Efeito visual dinâmico com **dist()** e **map()**
+- Fade-in nos textos
+- Botão de navegação **"Voltar ao Menu"**
+- Modularização com várias funções separadas
+- Estrutura limpa e comentada no código
 
-## Execução
-1. Abrir o arquivo `index.html` em um navegador moderno.
-2. Interagir com os botões e com o teclado para navegar pelos cenários.
-3. Explorar sons, imagens e textos.
+## 📸 Sobre as Imagens e Elementos Visuais
+As imagens utilizadas no projeto (campo.jpg, cidade.jpg e conexao.jpg) foram **geradas com auxílio de Inteligência Artificial (IA)**, usando a ferramenta **DALL·E da OpenAI**.
 
-## Publicação
-Projeto publicado com a hashtag **#agrinho**.
+**Prompts utilizados:**
+- **campo.jpg:** "Realistic rural landscape with farms, crops and blue sky"
+- **cidade.jpg:** "Modern city skyline with buildings, roads and clear sky"
+- **conexao.jpg:** "Creative composition showing the interdependence between rural and urban areas with a mix of farmland and city buildings"
+
+As imagens foram posteriormente redimensionadas e ajustadas para o projeto.
+
+## 🎵 Sobre os Sons
+Os sons usados (somCampo.mp3, somCidade.mp3, somConexao.mp3) foram escolhidos para representar o ambiente de cada cenário.
+
+## 📂 Estrutura de Arquivos do Projeto
+- index.html
+- style.css
+- sketch.js
+- p5.js
+- p5.sound.min.js
+- campo.jpg
+- cidade.jpg
+- conexao.jpg
+- somCampo.mp3
+- somCidade.mp3
+- somConexao.mp3
+- README.md
+
+## ✅ Publicação
+Projeto hospedado no **GitHub Pages**, seguindo todas as exigências do edital Agrinho 2025.
 
 ---
 
-Desenvolvido para o Concurso Agrinho 2025 - Categoria P5.js
+**Desenvolvido para o Concurso Agrinho 2025 - Categoria P5.js**
